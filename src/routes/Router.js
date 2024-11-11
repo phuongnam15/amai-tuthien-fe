@@ -5,7 +5,9 @@ import Loadable from '../layouts/shared/loadable/Loadable';
 /* ***Layouts**** */
 const FullLayout = Loadable(lazy(() => import('../layouts/full/FullLayout')));
 const BlankLayout = Loadable(lazy(() => import('../layouts/blank/BlankLayout')));
+const ManageLayout = Loadable(lazy(() => import('../layouts/manage/ManageLayout')));
 
+/** User */
 const HomePage = Loadable(lazy(() => import("../views/home/HomePage")));
 const AboutPage = Loadable(lazy(() => import("../views/about/AboutPage")));
 const ParticipateVolunteerPage = Loadable(lazy(() => import("../views/participate-volunteer/ParticipateVolunteerPage")));
@@ -18,6 +20,10 @@ const PostDetail = Loadable(lazy(() => import("../views/post-detail/PostDetail")
 const PagodaPage = Loadable(lazy(() => import("../views/pagoda/PagodaPage")));
 const AudioPage = Loadable(lazy(() => import("../views/audio/AudioPage")));
 const AudioPageDetail = Loadable(lazy(() => import("../views/audio-detail/AudioDetailPage")));
+
+/** Admin */
+const Login = Loadable(lazy(() => import("../views/admin/login/Login")));
+const CharityFund = Loadable(lazy(() => import("../views/admin/charity-fund/CharityFund")));
 
 const Router = [
   {
@@ -46,12 +52,17 @@ const Router = [
     ],
   },
   {
-    path: '/auth',
+    path: '/',
     element: <BlankLayout />,
     children: [
-    //   { path: '404', element: <Error /> },
-    //   { path: 'maintenance', element: <Maintenance /> },
-    //   { path: '*', element: <Navigate to="/auth/404" /> },
+      { path: '/dang-nhap', element: <Login /> },
+    ],
+  },
+  {
+    path: '/admin',
+    element: <ManageLayout />,
+    children: [
+      { path: 'quy-tu-thien', element: <CharityFund /> },
     ],
   },
 ];
