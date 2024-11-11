@@ -16,7 +16,7 @@ import { FiArrowDown } from "react-icons/fi";
 import useCheckMobileScreen from "../../utils/hooks/useCheckMobileScreen";
 import bathuong from "../../assets/images/backgrounds/bat-huong.webp";
 import smoke from "../../assets/videos/smoke.gif";
-// import loiphatday from "../../assets/audios/Lời phật dạy.mp3";
+import loiphatday from "../../assets/audios/Lời phật dạy 2.mp3";
 
 const scriptures = [
   {
@@ -150,7 +150,7 @@ const PagodaPage = () => {
   const [isPraying, setIsPraying] = useState(false);
   const [isSendRegister, setIsSendRegister] = useState(false);
   const isSmokeUp = pathname === "/thap-huong";
-  // const audioRef = useRef(null);
+  const audioRef = useRef(null);
   const textRef = useRef(null);
   const isMobileScreen = useCheckMobileScreen();
   const [isOpenConfirmRegisterModal, setIsOpenConfirmRegisterModal] = useState(false);
@@ -166,11 +166,11 @@ const PagodaPage = () => {
       : "Phòng Lễ Giỗ Ông Bà";
 
   const togglePlay = () => {
-    // if (isPlay) {
-    //   audioRef.current.pause();
-    // } else {
-    //   audioRef.current.play();
-    // }
+    if (isPlay) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
     setIsPlay(!isPlay);
   };
 
@@ -197,28 +197,28 @@ const PagodaPage = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   const handleFirstClick = () => {
-  //     if (audioRef.current) {
-  //       audioRef.current.play();
-  //       setIsPlay(true);
-  //     }
-  //     document.removeEventListener("click", handleFirstClick);
-  //   };
+  useEffect(() => {
+    const handleFirstClick = () => {
+      if (audioRef.current) {
+        audioRef.current.play();
+        setIsPlay(true);
+      }
+      document.removeEventListener("click", handleFirstClick);
+    };
 
-  //   document.addEventListener("click", handleFirstClick, { once: true });
+    document.addEventListener("click", handleFirstClick, { once: true });
 
-  //   return () => {
-  //     document.removeEventListener("click", handleFirstClick);
-  //   };
-  // }, []);
+    return () => {
+      document.removeEventListener("click", handleFirstClick);
+    };
+  }, []);
 
   return (
     <>
-      {/* <audio ref={audioRef} muted={isMuted}>
+      <audio ref={audioRef} muted={isMuted}>
         <source src={loiphatday} type="audio/mp3" />
         Your browser does not support the audio element.
-      </audio> */}
+      </audio>
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 duration-300 transition-transform transform px-5 xl:px-0 ${
           isOpenConfirmRegisterModal
