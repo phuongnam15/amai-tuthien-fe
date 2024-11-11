@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-roboto;
+  @apply text-primary-4;
+}
+
+.container {
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.form-input {
+  @apply xl:py-4 xl:px-6 text-sm xl:text-base py-[7px] px-[11px] rounded-[5.6px] xl:rounded-xl outline-none border border-primary-5 border-opacity-50;
+}
+.form-checkbox {
+  @apply cursor-pointer flex justify-center items-center xl:w-10 xl:h-10 w-[18.7px] h-[18.7px] border border-primary-5 border-opacity-50 flex-shrink-0 rounded-[3.744px] xl:rounded-lg;
+}
+.custom-shadow {
+  @apply shadow-none;
+  box-shadow: 0px 4px 20px 0px rgba(28, 117, 64, 0.2);
+}
+
+.animate-slide {
+  animation: slide-text 15s linear infinite;
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke-width: thin;
+    -webkit-text-stroke-color: #561111;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
+
+@font-face {
+  font-family: "Lora-Regular";
+  src: url("./assets//fonts//Lora-Regular.ttf"), format("truetype");
+}
+@font-face {
+  font-family: "Lora-Medium";
+  src: url("./assets//fonts//Lora-Medium.ttf"), format("truetype");
+}
+@font-face {
+  font-family: "Lora=Semibold";
+  src: url("./assets//fonts//Lora-SemiBold.ttf"), format("truetype");
+}
+@font-face {
+  font-family: "Lora-Bold";
+  src: url("./assets//fonts//Lora-Bold.ttf"), format("truetype");
+}
+@font-face {
+  font-family: "DVN-HaNoiPho";
+  src: url("./assets//fonts//DVN-HaNoiPho.ttf"), format("truetype");
+}
+@font-face {
+  font-family: "Mulish-Regular";
+  src: url("./assets//fonts//Mulish-Regular.ttf"), format("truetype");
+}
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("./assets//fonts//Roboto-Regular.ttf"), format("truetype");
+}
+
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space for vertical scrollbar */
+}
+
+/* Hiển thị thanh cuộn ngang */
+::-webkit-scrollbar-horizontal {
+  height: 5px; /* Set the height of the horizontal scrollbar */
+  background-color: #f1f1f1; /* Optional: Set the background color of the horizontal scrollbar */
+}
+
+/* Optional: customize the horizontal scrollbar thumb */
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: #888; /* Set the color of the horizontal scrollbar thumb */
+}
+
+/* Optional: customize the horizontal scrollbar track */
+::-webkit-scrollbar-track:horizontal {
+  background-color: #f1f1f1; /* Set the color of the horizontal scrollbar track */
+}
