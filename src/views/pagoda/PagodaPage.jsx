@@ -16,7 +16,7 @@ import { FiArrowDown } from "react-icons/fi";
 import useCheckMobileScreen from "../../utils/hooks/useCheckMobileScreen";
 import bathuong from "../../assets/images/backgrounds/bat-huong.webp";
 import smoke from "../../assets/videos/smoke.gif";
-import loiphatday from "../../assets/audios/Lời phật dạy 2.mp3";
+// import loiphatday from "../../assets/audios/Lời phật dạy 2.mp3";
 
 const scriptures = [
   {
@@ -215,10 +215,10 @@ const PagodaPage = () => {
 
   return (
     <>
-      <audio ref={audioRef} muted={isMuted}>
+      {/* <audio ref={audioRef} muted={isMuted}>
         <source src={loiphatday} type="audio/mp3" />
         Your browser does not support the audio element.
-      </audio>
+      </audio> */}
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 duration-300 transition-transform transform px-5 xl:px-0 ${
           isOpenConfirmRegisterModal
