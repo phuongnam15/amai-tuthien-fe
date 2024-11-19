@@ -194,9 +194,6 @@ const CharityEvent = () => {
                 {charityFunds.map((item, index) => {
                   return (
                     <div
-                      onClick={() =>
-                        navigate(`/chi-tiet-quy-tu-thien/${item.id}`)
-                      }
                       className="col-span-3 xl:col-span-2"
                     >
                       <CharityFundCard item={item} index={index} />
@@ -216,9 +213,6 @@ const CharityEvent = () => {
                 {charityFunds.map((item, index) => {
                   return (
                     <div
-                      onClick={() =>
-                        navigate(`/chi-tiet-quy-tu-thien/${item.id}`)
-                      }
                       className="col-span-3 xl:col-span-2"
                     >
                       <CharityFundCard item={item} index={index} />
