@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useDonationModal } from "../contexts/donationModalContext";
-import TooltipButton from "./TooltipButton";
+import TooltipButton from "./tooltip-button/TooltipButton";
 
 const CharityFundCard = ({ item, index }) => {
   const { isDonationModalOpen, setIsDonationModalOpen, setFundId } =
