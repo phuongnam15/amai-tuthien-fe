@@ -143,7 +143,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu Icon */}
-        <button className="text-3xl lg:hidden" onClick={toggleMobileMenu}>
+        <button className="text-3xl xl:hidden" onClick={toggleMobileMenu}>
           {isMobileMenuOpen ? (
             <FiX className="text-[#7D7D7D]" />
           ) : (
@@ -152,7 +152,7 @@ const Header = () => {
         </button>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex xl:gap-5 2xl:gap-7 items-center">
+        <div className="hidden xl:flex xl:gap-5 2xl:gap-7 items-center">
           {menuItems.map((item, index) => (
             <div key={index} className="relative">
               <div

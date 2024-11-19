@@ -61,7 +61,7 @@ const Language = () => {
       </button>
 
       {showMenu && (
-        <div className="absolute left-0 lg:right-0 lg:left-auto mt-2 w-48 bg-white shadow-lg z-50">
+        <div className="absolute left-0 xl:right-0 xl:left-auto mt-2 w-48 bg-white shadow-lg z-50">
           {Languages.map((option, index) => (
             <div
               key={index}
