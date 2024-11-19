@@ -154,6 +154,7 @@ const PagodaPage = () => {
   const textRef = useRef(null);
   const { isMobileScreen } = useCheckScreen();
   const [isOpenConfirmRegisterModal, setIsOpenConfirmRegisterModal] = useState(false);
+  const [isPrayerRoom, setIsPrayerRoom] = useState(false);
   const spaceName =
     pathname === "/chua"
       ? "Chánh điện chùa"
@@ -195,7 +196,7 @@ const PagodaPage = () => {
     return () => {
       document.head.removeChild(style);
     };
-  }, []);
+  }, [isPrayerRoom]);
 
   useEffect(() => {
     const handleFirstClick = () => {
@@ -212,6 +213,18 @@ const PagodaPage = () => {
       document.removeEventListener("click", handleFirstClick);
     };
   }, []);
+
+  useEffect(() => {
+    if (
+      pathname === "/phong-ho-menh-cau-an" ||
+      pathname === "/phong-le-gio-ong-ba" ||
+      pathname === "/phong-cau-sieu"
+    ) {
+      setIsPrayerRoom(true);
+    } else {
+      setIsPrayerRoom(false);
+    }
+  }, [pathname]);
 
   return (
     <>
@@ -511,18 +524,25 @@ const PagodaPage = () => {
                   )}
                 </div>
               </div>
-              <div class="w-full relative h-9 xl:h-auto rounded py-2 xl:py-4 xl:px-7 bg-[#FFE7C7] whitespace-nowrap xl:whitespace-normal overflow-hidden">
+              <div
+                class={`w-full relative h-9 xl:h-auto rounded py-2 xl:py-4 xl:px-7 bg-[#FFE7C7] whitespace-nowrap ${
+                  !isPrayerRoom ? "xl:whitespace-normal" : ""
+                } overflow-hidden`}
+              >
                 <p
                   ref={textRef}
                   class={`text-xs xl:text-sm ${
-                    isMobileScreen &&
-                    "animate-slide absolute w-fit top-1/2 -translate-y-1/2"
-                  }`}
+                    isMobileScreen || isPrayerRoom
+                      ? "absolute w-fit top-1/2 -translate-y-1/2"
+                      : ""
+                  } ${isPrayerRoom ? "animate-slide-2" : "animate-slide-1"}`}
                 >
-                  Xin Quý vị hãy tịnh tâm và chấp tay niệm "Nam Mô A Di Đà Phật"
+                  {isPrayerRoom
+                    ? `Thắp hương - Nam Mô A Di Đà Phật (3 lần), Hôm nay con thành tâm cầu nguyện mười phương Tam Bảo từ bi phóng quang tiếp độ cho Hương linh Pham giao nam trung , P/D Chua ro , Sinh: Khong ro , Mất: không rỏ, Hưởng Thọ: 0 tuổi, cư ngụ 55 TRUONG cong dinh da lat được nương nhờ công đức này về trước Phật đài, nghe Kinh thính pháp, tỏ ngộ tự tâm, sạch hết mê lầm, vãng sinh Tịnh Ðộ. Nam Mô A Di Đà Phật(3 lần) + cắm hương vào Lư hương và mở kinh cầu siêu.`
+                    : `Xin Quý vị hãy tịnh tâm và chấp tay niệm "Nam Mô A Di Đà Phật"
                   (108 lần) sau khi niệm xong xin Qúy vị tụng hồi hướng "Nguyện
                   đem công đức này, Hướng về khắp tất cả, Đệ tử và chúng sanh,
-                  Đều trọn thành Phật đạo.
+                  Đều trọn thành Phật đạo.`}
                 </p>
               </div>
             </div>
@@ -597,7 +617,7 @@ const PagodaPage = () => {
                             <input
                               type="text"
                               placeholder="ví dụ: 24/10/1945"
-                              className="form-input"
+                              className="form-input w-full"
                             />
                           </div>
                           <div className="flex flex-col gap-4 xl:gap-5 flex-1">
@@ -608,7 +628,7 @@ const PagodaPage = () => {
                             <input
                               type="text"
                               placeholder="ví dụ: 14/04/2014"
-                              className="form-input"
+                              className="form-input w-full"
                             />
                           </div>
                         </div>
