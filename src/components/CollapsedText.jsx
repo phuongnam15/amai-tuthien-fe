@@ -1,8 +1,8 @@
 import { useState } from "react";
-import useCheckMobileScreen from "../utils/hooks/useCheckMobileScreen";
+import useCheckScreen from "../utils/hooks/useCheckScreen";
 
 const CollapsedText = ({ collapseText, textArray, styleText }) => {
-  const isMobileScreen = useCheckMobileScreen();
+  const { isMobileScreen } = useCheckScreen();
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleText = () => setIsExpanded((prev) => !prev);

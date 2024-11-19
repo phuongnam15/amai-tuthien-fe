@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import useCheckMobileScreen from "../../utils/hooks/useCheckMobileScreen";
+import useCheckScreen from "../../utils/hooks/useCheckScreen";
 import cloud3 from "../../assets/images/backgrounds/cloud-31.webp";
 import banner from "../../assets/images/backgrounds/banner.webp";
 import banner2 from "../../assets/images/backgrounds/banner2.webp";
@@ -77,7 +77,7 @@ const preschools = [
 
 const CharityFundDetail = () => {
   const { id } = useParams();
-  const isMobileScreen = useCheckMobileScreen();
+  const { isMobileScreen } = useCheckScreen();
   const [seeAll, setSeeAll] = useState(false);
   const [fund, setFund] = useState({
     id: id,

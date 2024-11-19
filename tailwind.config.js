@@ -27,7 +27,7 @@ module.exports = {
         "custom-1": "calc(100% + 100px)",
       },
       colors: {
-        "primary": "#1C7540",
+        primary: "#1C7540",
         "primary-1": "#245601",
         "primary-2": "#FEF8E7",
         "primary-3": "#FCE9B3",
@@ -40,9 +40,9 @@ module.exports = {
         "lora-medium": ["Lora-Medium", "sans-serif"],
         "lora-semibold": ["Lora-Semibold", "sans-serif"],
         "lora-bold": ["Lora-Bold", "sans-serif"],
-        "hanoipho": ["DVN-HaNoiPho", "sans-serif"],
-        "mulish": ["Mulish-Regular", "sans-serif"],
-        "roboto": ["Roboto-Regular", "sans-serif"],
+        hanoipho: ["DVN-HaNoiPho", "sans-serif"],
+        mulish: ["Mulish-Regular", "sans-serif"],
+        roboto: ["Roboto-Regular", "sans-serif"],
       },
       backgroundImage: {
         "linear-1":
@@ -59,8 +59,8 @@ module.exports = {
         "black-hole": "url('/src/assets/images/backgrounds/black-hole.webp')",
         "radial-glow":
           "radial-gradient(circle, rgba(249, 218, 127, 1) 0%, rgba(249, 218, 127, 0) 70%)",
-        "wire": "url('/src/assets/images/icons/wire.svg')",
-        "pagoda": "url('/src/assets/images/backgrounds/pagoda.webp')",
+        wire: "url('/src/assets/images/icons/wire.svg')",
+        pagoda: "url('/src/assets/images/backgrounds/pagoda.webp')",
         "pagoda-2": "url('/src/assets/images/backgrounds/pagoda-2.webp')",
       },
       boxShadow: {

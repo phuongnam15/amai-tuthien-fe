@@ -5,12 +5,12 @@ import Preschool from "../../Preschool";
 import Post from "../../Post";
 import Feeling from "../../Feeling";
 import { useState } from "react";
-import useCheckMobileScreen from "../../../utils/hooks/useCheckMobileScreen";
+import useCheckScreen from "../../../utils/hooks/useCheckScreen";
 import SeeMoreButton from "../button/SeeMoreButton";
 
 const ListItem = ({ cloud, bgColor, title, type, items, padding }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const isMobileScreen = useCheckMobileScreen();
+  const { isMobileScreen } = useCheckScreen();
   const itemsPerPage =
     type === "posts" || type === "feeling"
       ? 1

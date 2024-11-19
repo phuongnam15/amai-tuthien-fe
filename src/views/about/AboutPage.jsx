@@ -305,7 +305,7 @@ const AboutPage = () => {
           </div>
           <div className="flex flex-col gap-4 xl:gap-6 xl:px-64">
             <h1 className="text-primary text-xl xl:text-4xl text-center font-lora-regular">
-              Lời Cảm ơn
+              Lời Cảm Ơn
             </h1>
             <p className="text-sm xl:text-base leading-[21px] xl:leading-6 flex-shrink-0">
               “Lời cảm ơn sâu sắc đến tất cả các nhà hảo tâm đã chung tay giúp

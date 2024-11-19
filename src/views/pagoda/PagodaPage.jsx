@@ -13,7 +13,7 @@ import line2 from "../../assets/images/icons/line-2.svg";
 import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
 import SeeMoreButton from "../../components/animations/button/SeeMoreButton";
 import { FiArrowDown } from "react-icons/fi";
-import useCheckMobileScreen from "../../utils/hooks/useCheckMobileScreen";
+import useCheckScreen from "../../utils/hooks/useCheckScreen";
 import bathuong from "../../assets/images/backgrounds/bat-huong.webp";
 import smoke from "../../assets/videos/smoke.gif";
 // import loiphatday from "../../assets/audios/Lời phật dạy 2.mp3";
@@ -152,7 +152,7 @@ const PagodaPage = () => {
   const isSmokeUp = pathname === "/thap-huong";
   const audioRef = useRef(null);
   const textRef = useRef(null);
-  const isMobileScreen = useCheckMobileScreen();
+  const { isMobileScreen } = useCheckScreen();
   const [isOpenConfirmRegisterModal, setIsOpenConfirmRegisterModal] = useState(false);
   const spaceName =
     pathname === "/chua"
@@ -595,7 +595,7 @@ const PagodaPage = () => {
                               <span className="text-red-500"> *</span>
                             </label>
                             <input
-                              type="date"
+                              type="text"
                               placeholder="ví dụ: 24/10/1945"
                               className="form-input"
                             />
@@ -606,7 +606,7 @@ const PagodaPage = () => {
                               <span className="text-red-500"> *</span>
                             </label>
                             <input
-                              type="date"
+                              type="text"
                               placeholder="ví dụ: 14/04/2014"
                               className="form-input"
                             />

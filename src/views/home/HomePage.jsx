@@ -8,7 +8,7 @@ import cloud1 from "../../assets/images/backgrounds/cloud-11.webp";
 import cloud2 from "../../assets/images/backgrounds/cloud-21.webp";
 import cloud3 from "../../assets/images/backgrounds/cloud-31.webp";
 import TopImage from "../../components/TopImage";
-import useCheckMobileScreen from "../../utils/hooks/useCheckMobileScreen";
+import useCheckScreen from "../../utils/hooks/useCheckScreen";
 import handHeart from "../../assets/images/icons/hand-heart.svg";
 import handHeart2 from "../../assets/images/icons/hand-heart-2.svg";
 import box from "../../assets/images/icons/box.svg";
@@ -213,7 +213,7 @@ const questions = [
 ];
 
 const HomePage = () => {
-  const isMobileScreen = useCheckMobileScreen();
+  const { isMobileScreen } = useCheckScreen();
   const [selectedQuestion, setSelectedQuestion] = useState(null);
   const [hoveredIndex, setHoveredIndex] = useState(0);
 

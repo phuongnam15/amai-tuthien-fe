@@ -1,4 +1,4 @@
-import useCheckMobileScreen from "../../utils/hooks/useCheckMobileScreen";
+import useCheckScreen from "../../utils/hooks/useCheckScreen";
 import cloud3 from "../../assets/images/backgrounds/cloud-31.webp";
 import banner from "../../assets/images/backgrounds/banner.webp";
 import banner2 from "../../assets/images/backgrounds/banner2.webp";
@@ -147,7 +147,7 @@ const preschools = [
 ];
 
 const CharityEvent = () => {
-  const isMobileScreen = useCheckMobileScreen();
+  const { isMobileScreen } = useCheckScreen();
   const [selectedTab, setSelectedTab] = useState(0);
   const navigate = useNavigate();
   const pathname = useLocation().pathname;
@@ -177,8 +177,8 @@ const CharityEvent = () => {
               className={`${
                 selectedTab === index
                   ? "bg-[#FFE7BA] text-[#DD8124] border-[#FFE7BA]"
-                  : "text-primary-5"
-              } py-1 xl:py-[10px] text-xs xl:text-xl px-4 xl:px-[72px] border-[0.3px] xl:border rounded-[18px] xl:rounded-[60px] border-primary-5 `}
+                  : "text-primary-5 border-primary-5"
+              } py-1 xl:py-[10px] text-xs xl:text-xl px-4 xl:px-[72px] border-[0.3px] xl:border rounded-[18px] xl:rounded-[60px]`}
             >
               {item.name}
             </button>

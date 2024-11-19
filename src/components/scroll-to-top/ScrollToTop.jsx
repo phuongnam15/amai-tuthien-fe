@@ -22,7 +22,7 @@ const ScrollToTop = () => {
 
   return (
     <div
-      className={`fixed flex flex-col h-[90%] w-auto transition-transform duration-1000 ease-linear ${
+      className={`fixed flex flex-col h-[85%] w-auto transition-transform duration-1000 ease-linear ${
         hasScrolled ? "translate-y-0" : "-translate-y-custom-1"
       } z-40 right-8`}
     >

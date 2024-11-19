@@ -1,4 +1,4 @@
-import useCheckMobileScreen from "../../utils/hooks/useCheckMobileScreen";
+import useCheckScreen from "../../utils/hooks/useCheckScreen";
 import CharityFundCard from "../../components/CharityFundCard";
 import image from "../../assets/images/backgrounds/image.png";
 import { FiArrowDown, FiArrowRight } from "react-icons/fi";
@@ -95,18 +95,16 @@ const news = [
 ];
 
 const PostPage = () => {
-  const isMobileScreen = useCheckMobileScreen();
+  const { isMobileScreen, isLargeScreen } = useCheckScreen();
   const navigate = useNavigate();
 
   return (
     <div className="w-full bg-white">
       <TopImage cloud={cloud3} image={banner} />
 
-      <div className="w-full flex flex-col xl:flex-row py-8 xl:py-14 xl:container mx-auto gap-8 xl:gap-0">
+      <div className={`w-full flex flex-col xl:flex-row py-8 xl:py-14 mx-auto gap-8 xl:gap-0 ${isLargeScreen && "container"} `}>
         <div
-          className={`xl:pr-6 xl:border-r xl:border-[#C89400] flex flex-col gap-8 ${
-            isMobileScreen && "container"
-          } `}
+          className={`xl:pr-6 xl:border-r xl:border-[#C89400] flex flex-col gap-8 ${!isLargeScreen && "container"}`}
         >
           <h1 className="text-primary font-lora-regular text-xl xl:text-[32px] text-center w-full">
             Các tin tức quyên góp mới nhất

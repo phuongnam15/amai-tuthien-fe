@@ -5,7 +5,7 @@ import { useAppreciation } from "../../contexts/appreciationContext";
 import Appreciation from "../../components/Appreciation";
 import image from "../../assets/images/backgrounds/image.png";
 import ScrollToTop from "../../components/scroll-to-top/ScrollToTop";
-import useCheckMobileScreen from "../../utils/hooks/useCheckMobileScreen";
+import useCheckScreen from "../../utils/hooks/useCheckScreen";
 
 const charityFunds = [
   {
@@ -53,7 +53,7 @@ const charityFunds = [
 ];
 
 const FullLayout = () => {
-  const isMobileScreen = useCheckMobileScreen();
+  const { isMobileScreen } = useCheckScreen();
   const { isShowAppreciationMobile } = useAppreciation();
   const pathname = useLocation().pathname.substring(1);
   const array = [

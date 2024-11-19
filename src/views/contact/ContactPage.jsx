@@ -1,4 +1,4 @@
-import useCheckMobileScreen from "../../utils/hooks/useCheckMobileScreen";
+import useCheckScreen from "../../utils/hooks/useCheckScreen";
 import TopImage from "../../components/TopImage";
 import cloud3 from "../../assets/images/backgrounds/cloud-31.webp";
 import banner from "../../assets/images/backgrounds/banner.webp";
@@ -36,7 +36,7 @@ const questions = [
 ];
 
 const ContactPage = () => {
-  const isMobileScreen = useCheckMobileScreen();
+  const { isMobileScreen } = useCheckScreen();
   const [selectedQuestion, setSelectedQuestion] = useState(null);
 
   return (

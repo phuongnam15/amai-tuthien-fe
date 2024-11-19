@@ -2,7 +2,7 @@ import TopImage from "../../components/TopImage";
 import cloud3 from "../../assets/images/backgrounds/cloud-31.webp";
 import banner2 from "../../assets/images/backgrounds/banner2.webp";
 import banner from "../../assets/images/backgrounds/banner.webp";
-import useCheckMobileScreen from "../../utils/hooks/useCheckMobileScreen";
+import useCheckScreen from "../../utils/hooks/useCheckScreen";
 import reason1 from "../../assets/images/backgrounds/reason-1.webp";
 import reason2 from "../../assets/images/backgrounds/reason-2.webp";
 import partner1 from "../../assets/images/logos/partner-1.svg";
@@ -56,7 +56,7 @@ const charityFunds = [
 ];
 
 const ParticipateVolunteerPage = () => {
-  const isMobileScreen = useCheckMobileScreen();
+  const { isMobileScreen } = useCheckScreen();
   const [isFinancialMarket, setIsFinancialMarket] = useState(false);
   const [isDonateItems, setIsDonateItems] = useState(false);
   const [isParticipateInVolunteering, setIsParticipateInVolunteering] =

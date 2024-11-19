@@ -1,4 +1,4 @@
-import useCheckMobileScreen from "../utils/hooks/useCheckMobileScreen";
+import useCheckScreen from "../utils/hooks/useCheckScreen";
 import { useDonationModal } from "../contexts/donationModalContext";
 import { useState } from "react";
 import { FaCheck } from "react-icons/fa";
@@ -49,7 +49,7 @@ const DonationModal = () => {
     setIsShowAppreciationMobile,
     appreciationType,
   } = useAppreciation();
-  const isMobileScreen = useCheckMobileScreen();
+  const { isMobileScreen } = useCheckScreen();
   const [selectedTab, setSelectedTab] = useState(0);
   const [isAnonymous, setIsAnonymous] = useState(false);
   const [selectedDonationMethod, setSelectedDonationMethod] = useState(0);
