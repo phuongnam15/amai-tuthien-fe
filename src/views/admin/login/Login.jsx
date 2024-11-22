@@ -1,9 +1,27 @@
 import { useState } from "react";
+import { login } from "../../../api/adminApi";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleLogin = () => {};
+  const navigate = useNavigate();
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const input = {
+        email,
+        password,
+      };
+      const response = await login(input);
+      if (response) {
+        localStorage.setItem("access_token", response?.data?.token);
+        navigate("/admin/quy-tu-thien");
+      }
+    } catch (error) {
+      console.log(error?.response?.data?.error_msg);
+    }
+  };
 
   return (
     <div className="w-full max-w-sm rounded-lg bg-white p-6 shadow-md">

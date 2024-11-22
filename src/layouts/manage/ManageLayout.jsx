@@ -10,7 +10,10 @@ const ManageLayout = () => {
     { name: "Quản lý quỹ từ thiện", path: "/admin/quy-tu-thien" },
     { name: "Quản lý audio", path: "/admin/audio" },
   ];
-  const handleLogout = () => {};
+  const handleLogout = () => {
+    navigate("/dang-nhap");
+    localStorage.removeItem("access_token");
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">

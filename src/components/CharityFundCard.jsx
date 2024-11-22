@@ -1,10 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { useDonationModal } from "../contexts/donationModalContext";
 import TooltipButton from "./tooltip-button/TooltipButton";
 
 const CharityFundCard = ({ item, index }) => {
-  const { isDonationModalOpen, setIsDonationModalOpen, setFundId } =
-    useDonationModal();
   const navigate = useNavigate();
 
   return (
@@ -21,7 +18,10 @@ const CharityFundCard = ({ item, index }) => {
       </div>
 
       <div className="flex flex-col gap-2 xl:gap-3">
-        <span onClick={() => navigate(`/chi-tiet-quy-tu-thien/${item.id}`)} className="text-[#3D3D3D] cursor-pointer hover:underline font-bold line-clamp-2 xl:line-clamp-none overflow-hidden text-base xl:text-lg leading-6">
+        <span
+          onClick={() => navigate(`/chi-tiet-quy-tu-thien/${item.id}`)}
+          className="text-[#3D3D3D] cursor-pointer hover:underline font-bold line-clamp-2 xl:line-clamp-none overflow-hidden text-base xl:text-lg leading-6"
+        >
           {item.name}
         </span>
         <div className="flex flex-col gap-2">
@@ -70,8 +70,7 @@ const CharityFundCard = ({ item, index }) => {
           <TooltipButton />
           <button
             onClick={() => {
-              setIsDonationModalOpen(true);
-              setFundId(item.id);
+              navigate(`/chi-tiet-quy-tu-thien/${item.id}`);
             }}
             className="flex-1 rounded-lg  xl:rounded-[32px] bg-primary text-xs xl:text-base text-white py-[7px] xl:py-2"
           >

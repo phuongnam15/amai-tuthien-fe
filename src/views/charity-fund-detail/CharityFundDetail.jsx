@@ -17,6 +17,8 @@ import mamnon4 from "../../assets/images/mamnon-4.webp";
 import mamnon5 from "../../assets/images/mamnon-5.webp";
 import mamnon6 from "../../assets/images/mamnon-6.webp";
 import CollapsedText from "../../components/CollapsedText";
+import TooltipButton from "../../components/tooltip-button/TooltipButton";
+import { useDonationModal } from "../../contexts/donationModalContext";
 
 const charityFunds = [
   {
@@ -58,30 +60,16 @@ const preschools = [
     name: "Nguyễn Văn A",
     description: "Mầm non tại chùa Ba Vàng",
   },
-  {
-    image: mamnon4,
-    name: "Nguyễn Văn A",
-    description: "Mầm non tại chùa Ba Vàng",
-  },
-  {
-    image: mamnon5,
-    name: "Nguyễn Văn A",
-    description: "Mầm non tại chùa Ba Vàng",
-  },
-  {
-    image: mamnon6,
-    name: "Nguyễn Văn A",
-    description: "Mầm non tại chùa Ba Vàng",
-  },
 ];
 
 const CharityFundDetail = () => {
   const { id } = useParams();
   const { isMobileScreen } = useCheckScreen();
   const [seeAll, setSeeAll] = useState(false);
+  const { setIsDonationModalOpen, setFundId } = useDonationModal();
   const [fund, setFund] = useState({
     id: id,
-    type: "preschool",
+    type: "charity_funds",
     title: "Quỹ Hỗ Trợ Xây Dựng Chùa Ba Vàng",
     content: "",
     beneficiaries: "Chùa ba vàng",
@@ -137,7 +125,7 @@ const CharityFundDetail = () => {
           <h1 className="font-lora-regular text-xl xl:text-4xl px-14 xl:px-0 text-primary text-center mb-4 xl:mb-0">
             {fund.title}
           </h1>
-          <CollapsedText 
+          <CollapsedText
             collapseText={fund.description.split(" ").slice(0, 30).join(" ")}
             textArray={[fund.description]}
             styleText={"text-sm xl:text-base leading-[21px] xl:leading-6"}
@@ -184,9 +172,7 @@ const CharityFundDetail = () => {
               </h1>
               <div className="mb-4 xl:mb-1 w-full py-4 px-[22px] xl:py-[22px] text-sm xl:text-base border border-[#B3B3B3] bg-[#ECECEC] gap-4 rounded-lg flex flex-col">
                 <div className="flex gap-1">
-                  <p className="font-semibold ">
-                    Đối tượng thụ hưởng:
-                  </p>{" "}
+                  <p className="font-semibold ">Đối tượng thụ hưởng:</p>{" "}
                   <p>{fund.beneficiaries}</p>
                 </div>
                 <div className="flex gap-1">
@@ -252,12 +238,16 @@ const CharityFundDetail = () => {
                 </div>
               </div>
               <div className="flex xl:flex-col w-full gap-4 xl:gap-[11px]">
-                <button className="py-[10px] rounded-[32px] text-base bg-primary text-white flex-1">
+                <button
+                  onClick={() => {
+                    setIsDonationModalOpen(true);
+                    setFundId(fund.id);
+                  }}
+                  className="py-[10px] rounded-[32px] text-base bg-primary text-white flex-1"
+                >
                   Quyên góp
                 </button>
-                <button className="py-[10px] rounded-[32px] text-base border border-[#FFE7BA] text-[#DD8124] flex-1">
-                  Chia sẻ
-                </button>
+                <TooltipButton />
               </div>
             </div>
             <div className="">
@@ -296,7 +286,7 @@ const CharityFundDetail = () => {
         title={"Các chương trình khác"}
         bgColor={"bg-white"}
         type={fund.type === "preschool" ? "preschools" : "charity_funds"}
-        items={charityFunds}
+        items={fund.type === "preschool" ? preschools : charityFunds}
         padding={"py-8 xl:py-24"}
       />
     </div>
