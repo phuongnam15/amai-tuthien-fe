@@ -70,10 +70,13 @@ const Organization = () => {
                     ID
                   </th>
                   <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                    Tên
+                    fullname
                   </th>
                   <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
-                    Ảnh
+                    username
+                  </th>
+                  <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">
+                    thumbnails
                   </th>
                 </tr>
               </thead>
@@ -82,6 +85,9 @@ const Organization = () => {
                   <tr key={post?.id} className="border-b hover:bg-gray-50">
                     <td className="px-4 py-2 text-sm text-gray-700">
                       {post.id}
+                    </td>
+                    <td className="px-4 py-2 text-md font-semibold tracking-wide text-gray-700">
+                      {post?.fullname}
                     </td>
                     <td className="px-4 py-2 text-sm text-gray-700">
                       {post?.username}
