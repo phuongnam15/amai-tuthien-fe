@@ -24,6 +24,7 @@ const AudioPageDetail = Loadable(lazy(() => import("../views/audio-detail/AudioD
 /** Admin */
 const Login = Loadable(lazy(() => import("../views/admin/login/Login")));
 const CharityFund = Loadable(lazy(() => import("../views/admin/charity-fund/CharityFund")));
+const Organization = Loadable(lazy(() => import("../views/admin/organization/Organization")));
 
 const Router = [
   {
@@ -62,6 +63,7 @@ const Router = [
     path: '/admin',
     element: <ManageLayout />,
     children: [
+      { path: 'to-chuc', element: <Organization /> },
       { path: 'quy-tu-thien', element: <CharityFund /> },
     ],
   },

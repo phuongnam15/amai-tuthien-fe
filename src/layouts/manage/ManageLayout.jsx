@@ -6,6 +6,7 @@ const ManageLayout = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const menuItems = [
+    { name: "Tổ chức", path: "/admin/to-chuc" },
     { name: "Quản lý bài viết", path: "/admin/bai-viet" },
     { name: "Quản lý quỹ từ thiện", path: "/admin/quy-tu-thien" },
     { name: "Quản lý audio", path: "/admin/audio" },
